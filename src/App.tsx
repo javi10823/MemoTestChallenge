@@ -1,13 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import GameScreen from "./screens/Game";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-     <button>start</button>
-     <button>continue</button>
-
+      {/* <button>start</button>
+     <button>continue</button> */}
+      <GameScreen />
     </div>
   );
 }
