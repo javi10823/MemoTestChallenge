@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import {
   Card,
   CardNumber,
@@ -7,6 +6,8 @@ import {
   Modal,
   ModalContent,
   Row,
+  Score,
+  BackButton,
 } from "./styles";
 
 type CardType = {
@@ -105,8 +106,8 @@ const Game = () => {
       <Row>{cards.slice(9, 14).map((i) => card(i))}</Row>
       <Modal open={pairs.length === cards.length}>
         <ModalContent>
-          <p>Score: {score}</p>
-          <Link to="/">Back</Link>
+          <Score>Score: {score}</Score>
+          <BackButton to="/">Back</BackButton>
         </ModalContent>
       </Modal>
     </Container>

@@ -1,20 +1,15 @@
-import { Link } from "react-router-dom";
+import { Button, Container } from "./styles";
 
-const HomeScreen = () => {
-  let data = JSON.parse(window.localStorage.getItem("gameSession")!);
-
-  console.log(data);
-  return (
-    <>
-      <Link
-        to="./game"
-        onClick={() => window.localStorage.removeItem("gameSession")}
-      >
-        start
-      </Link>
-      <Link to="./game">continue</Link>
-    </>
-  );
-};
+const HomeScreen = () => (
+  <Container>
+    <Button
+      to="./game"
+      onClick={() => window.localStorage.removeItem("gameSession")}
+    >
+      START
+    </Button>
+    <Button to="./game">CONTINUE</Button>
+  </Container>
+);
 
 export default HomeScreen;

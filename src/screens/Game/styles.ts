@@ -1,5 +1,6 @@
 import { Modal as ModalMU } from "@mui/material";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Card = styled.button`
   width: 10%;
@@ -25,7 +26,11 @@ export const Modal = styled(ModalMU)`
 
 export const ModalContent = styled.div`
   background-color: white;
-  padding: 20px;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
 `;
 
 export const Row = styled.div`
@@ -39,4 +44,27 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: ${window.innerHeight}px;
+  background: linear-gradient(
+    36deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(82, 9, 121, 1) 40%,
+    rgba(0, 212, 255, 1) 100%
+  );
+`;
+
+export const Score = styled.p`
+  font-size: 30px;
+  font-weight: 700;
+`;
+
+export const BackButton = styled(Link)`
+  background-color: #520979;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  width: 30%;
+  text-align: center;
 `;
