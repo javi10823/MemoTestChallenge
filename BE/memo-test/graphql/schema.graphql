@@ -1,0 +1,53 @@
+scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+
+type Query {
+    test(
+      id: ID @eq
+    ): Tests @find
+    tests(
+      name: String  @where(operator: "like")
+    ): [Tests!]! @paginate(defaultCount: 10)
+
+    sessions(
+      id: String @where(operator: "like")
+    ): [Sessions!] @paginate(defaultCount: 10)
+    session(
+      id: ID @eq
+    ): Sessions @find
+}
+
+
+type Mutation {
+  createTest(name: String!, images: String!): Tests! @create
+  updateTest(id: ID!, images: String): Tests @update
+  deleteTest(id: ID!): Tests @delete
+
+  createSession(memoTestId: Int, retries: Int, numberOfPairs: Int, state: State): Sessions! @create
+  updateSession(id: ID!, retries: Int, numberOfPairs: Int, state: State): Sessions @update
+  deleteSession(id: ID!): Sessions @delete
+}
+
+type Tests {
+  id: ID!
+  name: String!
+  images: String!
+}
+
+type Tests {
+  id: ID!
+  name: String!
+  images: String!
+}
+
+type Sessions {
+  id: ID! 
+  memoTestId: Int
+  retries: Int 
+  numberOfPairs: Int 
+  state: State
+}
+
+enum State {
+  Started
+  Completed
+}

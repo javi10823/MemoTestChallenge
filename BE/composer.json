@@ -1,0 +1,6 @@
+{
+    "require": {
+        "nuwave/lighthouse": "^5.61",
+        "mll-lab/laravel-graphiql": "^1.0"
+    }
+}
